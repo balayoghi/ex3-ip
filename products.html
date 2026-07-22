@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iPhone Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<center>
+    <br>
+    <h1>Our Premium iPhones</h1>
+    <p>Drag your favorite model directly into your digital cart container:</p>
+
+    <table border="0" cellpadding="15">
+        <tr>
+            <td align="center" valign="top" width="160">
+                <img id="j1" src="img4.jfif" alt="iPhone 16 Pro" draggable="true" ondragstart="drag(event)" width="100" style="cursor: grab;"><br><br>
+                <b>iPhone 16 Pro</b><br>
+                <font size="2" color="#666666">Titanium design with A18 Pro chip and pro camera system.</font>
+            </td>
+            <td align="center" valign="top" width="160">
+                <img id="j2" src="img1.jfif" alt="iPhone 17 Pro" draggable="true" ondragstart="drag(event)" width="100" style="cursor: grab;"><br><br>
+                <b>iPhone 17 Pro</b><br>
+                <font size="2" color="#666666">Powerful triple-camera system in a striking orange titanium finish.</font>
+            </td>
+            <td align="center" valign="top" width="160">
+                <img id="j3" src="img2.jfif" alt="iPhone 17" draggable="true" ondragstart="drag(event)" width="100" style="cursor: grab;"><br><br>
+                <b>iPhone 17</b><br>
+                <font size="2" color="#666666">Sleek sky-blue finish with all-day battery life.</font>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" valign="top" width="160">
+                <img id="j4" src="img3.jfif" alt="iPhone 17 Pro Max" draggable="true" ondragstart="drag(event)" width="100" style="cursor: grab;"><br><br>
+                <b>iPhone 17 Pro Max</b><br>
+                <font size="2" color="#666666">Our largest display yet in an elegant lavender finish.</font>
+            </td>
+            <td align="center" valign="top" width="160">
+                <img id="j5" src="img4.jfif" alt="iPhone Air" draggable="true" ondragstart="drag(event)" width="100" style="cursor: grab;"><br><br>
+                <b>iPhone Air</b><br>
+                <font size="2" color="#666666">Our thinnest iPhone ever, in a striking violet-blue tone.</font>
+            </td>
+            <td align="center" valign="top" width="160">
+                <img id="j6" src="img1.jfif" alt="iPhone 17 Pro (Orange)" draggable="true" ondragstart="drag(event)" width="100" style="cursor: grab;"><br><br>
+                <b>iPhone 17 Pro (Orange)</b><br>
+                <font size="2" color="#666666">Bold cosmic orange finish with pro-grade performance.</font>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <h3>Your Shopping Cart</h3>
+    
+    <div id="cart" ondrop="drop(event)" ondragover="allowDrop(event)" style="border: 2px dashed #0071e3; height: 120px; width: 450px; background-color: #ffffff; padding: 10px;">
+        <p id="placeholder" style="color: #888888; margin-top: 45px;">Drop items here...</p>
+    </div>
+
+    <script>
+    function allowDrop(ev) { 
+        ev.preventDefault(); 
+    }
+
+    function drag(ev) { 
+        ev.dataTransfer.setData("text", ev.target.id); 
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        var draggedElement = document.getElementById(data);
+        
+        var cart = document.getElementById("cart");
+        var placeholder = document.getElementById("placeholder");
+        
+        if (placeholder) {
+            placeholder.remove();
+        }
+        
+        // Clone and add item cleanly side-by-side in the cart box
+        var imgClone = draggedElement.cloneNode(true);
+        imgClone.style.margin = "5px";
+        imgClone.style.cursor = "default";
+        imgClone.removeAttribute("draggable");
+        
+        cart.appendChild(imgClone);
+    }
+    </script>
+
+    <br><br>
+    <a href="index.html">Back to Home</a>
+</center>
+
+</body>
+</html>

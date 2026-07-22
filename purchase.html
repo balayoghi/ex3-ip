@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place iPhone Order</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<center>
+    <form action="#" method="POST" style="text-align: left; max-width: 450px; padding: 30px; border: 1px solid #ccc; border-radius: 8px; background-color: #ffffff; font-family: Arial, sans-serif; box-shadow: 0 4px 8px rgba(0,0,0,0.05); margin-top: 20px;">
+        
+        <h2 style="margin-top: 0; text-align: center;">iPhone Order Form</h2>
+        <hr>
+        <br>
+
+        <label>Customer Full Name:</label><br>
+        <input type="text" name="customerName" placeholder="John Doe" required style="width: 100%; padding: 6px; box-sizing: border-box;"><br><br>
+
+        <label>Email Address:</label><br>
+        <input type="email" name="customerEmail" placeholder="hello@istore.com" required style="width: 100%; padding: 6px; box-sizing: border-box;"><br><br>
+
+        <label>Contact Number:</label><br>
+        <input type="tel" name="customerPhone" pattern="[0-9]{10}" placeholder="10 Digit Mobile Number" required style="width: 100%; padding: 6px; box-sizing: border-box;"><br><br>
+
+        <label>Preferred Delivery Date:</label><br>
+        <input type="date" name="deliveryDate" required style="width: 100%; padding: 6px; box-sizing: border-box;"><br><br>
+
+        <label>Unit Count (Max 5 per order):</label><br>
+        <input type="number" name="quantity" min="1" max="5" value="1" style="width: 100%; padding: 6px; box-sizing: border-box;"><br><br>
+
+        <label>Storage Customization Level (%):</label><br>
+        <input type="range" name="storage" min="0" max="100" step="10" value="50" style="width: 100%;"><br><br>
+
+        <label>Custom Engraving Color Tone:</label><br>
+        <input type="color" name="labelColor" value="#0071e3" style="width: 60px; height: 30px;"><br><br>
+        
+        <label>Payment Mode Strategy:</label><br>
+        <input type="radio" name="paymentType" value="cod" checked> Cash on Delivery<br>
+        <input type="radio" name="paymentType" value="upi"> Instant App UPI Engine Integration<br><br>
+        
+        <label>iPhone Model Category Block Selection:</label><br>
+        <select name="phoneCategory" style="width: 100%; padding: 6px; box-sizing: border-box;">
+            <option>iPhone 17 Pro</option>
+            <option>iPhone 17</option>
+            <option>iPhone 17 Pro Max</option>
+        </select><br><br>
+        
+        <center>
+            <input type="submit" value="Confirm iPhone Order">
+            <input type="reset" value="Reset Form Details">
+        </center>
+    </form>
+
+    <br><br>
+    <a href="index.html">Back to Home</a>
+</center>
+
+</body>
+</html>

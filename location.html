@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Nearest iStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Locate Nearest iStore Outlet</h1>
+<p>Click below to grant location permissions and pinpoint our closest iPhone store setup:</p>
+
+<button onclick="getLocation()">Find Nearest Store</button>
+
+<h3 id="locationDisplay"></h3>
+
+<script>
+var display = document.getElementById("locationDisplay");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        display.innerHTML = "Geolocation is not supported by this browser setup.";
+    }
+}
+
+function showPosition(position) {
+    display.innerHTML = "📍 Coordinate Match Found!<br><br>" +
+                        "Latitude: " + position.coords.latitude + "°<br>" +
+                        "Longitude: " + position.coords.longitude + "°";
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            display.innerHTML = "User denied the request for Geolocation.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            display.innerHTML = "Location information is unavailable.";
+            break;
+        case error.TIMEOUT:
+            display.innerHTML = "The request to get user location timed out.";
+            break;
+        default:
+            display.innerHTML = "An unknown error occurred.";
+            break;
+    }
+}
+</script>
+
+<br><br><br>
+<a href="index.html">Back to Home</a>
+
+</body>
+</html>
